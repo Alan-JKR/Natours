@@ -1,0 +1,71 @@
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin center-horizontal-vertical {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// MEDIA QUERY MANAGER
+
+/*
+
+0 - 600px:  (Phone)
+600 - 900px:  (Tablet portrait)
+900 - 1200px: (Tablet landscape)
+[1200 - 1800] is where our normal styles apply
+1800px + : (Big desktop)
+
+
+
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER:Base + typography > general layout + grid > page layout > components
+
+*/
+
+// In media queries the em and rem relative units are relation with the browser default font-size:16px ,if user changes the browser font-size setting it will changed to that specified value
+
+// only screen only works on the screen but it will not work when someone tries to print our page.
+@mixin respond($breakpoint) {
+  // if directive
+
+  @if $breakpoint==phone {
+    // 600px
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==tab-port {
+    // 900px
+    @media only screen and (max-width: 56.25em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==tab-land {
+    // 1200px
+    @media only screen and (max-width: 75em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==big-desktop {
+    // 1800px
+    @media only screen and (min-width: 112.5em) {
+      @content;
+    }
+  }
+}
