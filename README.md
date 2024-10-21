@@ -1,5 +1,3 @@
----
-
 # 🌍 Outdoor Adventures - README
 
 **Welcome to Outdoor Adventures!** 🌲✨ Dive into a world where the thrill of exploration meets the serenity of nature. This project is a celebration of the great outdoors, designed to inspire wanderlust and foster a love for adventure.
@@ -55,5 +53,3 @@ This project is built upon the foundations laid by **Jonas Schmedtmann** in his 
 ## 🌐 Visit Us
 
 Ready to explore? Check out the live site: [Outdoor Adventures](https://natours-nalan.netlify.app/#)
-
----
